@@ -7,7 +7,7 @@ public class ControladorIntentos : MonoBehaviour {
     [Header("Imagenes botones")]
     public Sprite imagenIntentoOk;
     public Sprite imagenIntentoErroneo;
-    public Sprite imagenNormal;
+
 
     [Header("Intentos")]
     public int cantidadIntentos = 3;
@@ -24,7 +24,6 @@ public class ControladorIntentos : MonoBehaviour {
 
         for (int a = 0; a < cantidadIntentos; a++) {
             objetoBotonCreado = Instantiate(prefabIntentos);
-            objetoBotonCreado.GetComponent<Image>().sprite = imagenNormal;
             objetoBotonCreado.transform.SetParent(transform);
             listaObjetosBotonesCreados.Add(objetoBotonCreado);
         }
@@ -51,9 +50,12 @@ public class ControladorIntentos : MonoBehaviour {
         ValorIntento += 1;
         if (Correcto){
             listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().sprite = imagenIntentoOk;
+            listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().color = Color.white; //le cambia la gama para que no sea transparente
         }
         else {
             listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().sprite = imagenIntentoErroneo;
+            listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().color = Color.white;
+
         }
         if (ValorIntento >= cantidadIntentos) {
             FindObjectOfType<Valija>().valijaAbierta = false;

@@ -68,13 +68,13 @@ public class Valija : MonoBehaviour {
 
     public void VerificaObjetosColocadosEnValija(GameObject objetoColocado)
     {
-        Debug.Log("Coloco : " + objetoColocado.GetComponent<Image>().sprite.name);
+        //Debug.Log("Coloco : " + objetoColocado.GetComponent<Image>().sprite.name);
         
         for (int a = 0; a < imagenesCorrectas.Count; a++) {
             //Debug.Log(imagenesCorrectas[a].name + "," + objetoColocado.GetComponent<Image>().sprite.name);
 
             if (imagenesCorrectas[a].name == objetoColocado.GetComponent<Image>().sprite.name) {
-                Debug.Log("ok");
+                //Debug.Log("ok");
 
 
                 if (VerificaImagenesEnValija(objetoColocado.GetComponent<Image>().sprite) == false)

@@ -35,6 +35,7 @@ public class GeneradorObjetosDraggables : MonoBehaviour {
             objetoAleatorioCreado.GetComponent<Image>().sprite = CL.todasImagenesObjetos[Random.Range(0, CL.todasImagenesObjetos.Count)];
             objetoAleatorioCreado.transform.SetParent(PanelPadreObjeto.transform);
             objetoAleatorioCreado.transform.SetPositionAndRotation(PanelPadreObjeto.transform.position, PanelPadreObjeto.transform.rotation);
+           
         }
         else {
             Debug.Log("No hay imagenes para crear");
