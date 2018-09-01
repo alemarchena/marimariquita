@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GeneradorObjetosDraggables.cs" />
     <Compile Include="Assets\Scripts\ImagenLugar.cs" />
     <Compile Include="Assets\Scripts\Lugar.cs" />
+    <Compile Include="Assets\Scripts\ScrollBoton.cs" />
     <Compile Include="Assets\Scripts\TraspasoNivel.cs" />
     <Compile Include="Assets\Scripts\Valija.cs" />
     <Reference Include="UnityEditor.StandardEvents">

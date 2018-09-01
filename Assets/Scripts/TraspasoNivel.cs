@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class TraspasoNivel : MonoBehaviour {
     public int idLugarElegido;
-    
 
     private GameObject CE;
     private ControladorEscenas controladorEscenas;
