@@ -16,9 +16,13 @@ public class ControladorIntentos : MonoBehaviour {
     private GameObject objetoBotonCreado;
     private List<GameObject> listaObjetosBotonesCreados;
     private static int intentoActual = 0;
+    private Valija VA;
+    private Armario AR;
 
     private void Awake()
     {
+        VA = FindObjectOfType<Valija>();
+        AR = FindObjectOfType<Armario>();
         listaObjetosBotonesCreados = new List<GameObject>();
         listaObjetosBotonesCreados.Clear();
 
@@ -48,6 +52,7 @@ public class ControladorIntentos : MonoBehaviour {
 
     public void ActualizaIntento(bool Correcto) {
         ValorIntento += 1;
+        
         if (Correcto){
             listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().sprite = imagenIntentoOk;
             listaObjetosBotonesCreados[intentoActual - 1].GetComponent<Image>().color = Color.white; //le cambia la gama para que no sea transparente
@@ -58,8 +63,10 @@ public class ControladorIntentos : MonoBehaviour {
 
         }
         if (ValorIntento >= cantidadIntentos) {
-            FindObjectOfType<Valija>().valijaAbierta = false;
+           
+            AR.CancelaArmario();   
         }
+       
     }
 
     

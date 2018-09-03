@@ -7,34 +7,29 @@ public class DropZone : MonoBehaviour,  IDropHandler
     private Valija valija;
     private Armario armario;
 
-    
-    
     public void OnDrop(PointerEventData eventData)
     {
         valija = gameObject.GetComponent<Valija>();
-        if (valija != null) {
-            if (valija.valijaAbierta == false) { 
-                return;
-            }
+        if (valija == null)
+        {
+            FindObjectOfType<Valija>().CerrarValija();
         }
 
         armario = gameObject.GetComponent<Armario>();
 
-
-        //Debug.Log(eventData.pointerDrag.name + "Hizo el Drag en " + gameObject.name);
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null) {
             d.panelDeRetorno = this.transform;
 
             if (valija != null)
             { //si el objeto fue soltado en la valija
-                GameObject.FindObjectOfType<Valija>().VerificaObjetosColocadosEnValija(eventData.pointerDrag); //envia a la valija el objeto soltado
-                GameObject.Find("PanelValija").GetComponent<Valija>().ReemplazaImagenAbierta(GameObject.Find("PanelValija").GetComponent<Valija>().imagenAbierta);
+                FindObjectOfType<Valija>().VerificaObjetosColocadosEnValija(eventData.pointerDrag); //envia a la valija el objeto soltado
+                FindObjectOfType<Valija>().CerrarValija();
             }
 
             if (armario != null)
             { //si el objeto fue soltado en el armario
-                GameObject.FindObjectOfType<Armario>().VerificaObjetosColocadosEnArmario(eventData.pointerDrag);
+                FindObjectOfType<Armario>().VerificaObjetosColocadosEnArmario(eventData.pointerDrag);
             }
 
         }

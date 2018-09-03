@@ -13,20 +13,25 @@ public class GeneradorObjetosDraggables : MonoBehaviour {
     private int tipoObjetoAleatorio;
     private GameObject controladorLugares;
     private ControladorLugares CL;
-    
+    private Armario AR;
+
 
     private void Awake()
     {
         controladorLugares = GameObject.Find("ControladorLugares");
         CL = controladorLugares.GetComponent<ControladorLugares>();
+        AR = FindObjectOfType<Armario>();
     }
 
     public void CreaObjetoDraggable()
     {
-        FindObjectOfType<Armario>().armarioAbierto= true;
+        
 
         if (CL.todasImagenesObjetos.Count > 0)
         {
+            AR.AbreArmario();
+            
+
             if (objetoAleatorioCreado != null)
                 Destroy(objetoAleatorioCreado);
 

@@ -4,59 +4,57 @@ using UnityEngine.UI;
 
 public class Valija : MonoBehaviour {
 
+    [Header("Animaciones")]
+    [SerializeField] Animator anim;
     [Header("Imagenes")]
     public Sprite imagenAbiertaConTapa;
     public Sprite imagenAbierta;
     public Sprite imagenCerrada;
     public List<Sprite> imagenesCorrectas;
-    public bool valijaAbierta = false;
+
     public int limiteAciertos = 3;
     public int limiteDesaciertos = 3;
     public int aciertos=0;
     public int desaciertos = 0;
 
-    private Sprite imagenAbiertaActual=null;
+    [SerializeField] ControladorEfectos CE;
 
+    private ControladorIntentos CI;
+    private Armario AR;
     private ControladorLugares CL;
     private GameObject controladorLugares;
     public List<Sprite> imagenesEnValija;
-
+    
     private void Awake()
     {
         controladorLugares = GameObject.Find("ControladorLugares");
+        CI = FindObjectOfType<ControladorIntentos>();
         CL = controladorLugares.GetComponent<ControladorLugares>();
+        AR = FindObjectOfType<Armario>();
 
         imagenesEnValija = new List<Sprite>();
         imagenesEnValija.Clear();
-        imagenAbiertaActual = imagenAbierta;
     }
 
     private void Start()
     {
-        valijaAbierta = true;
         ReconoceObjetosCorrectos();    
     }
 
-    private void Update()
-    {
-        if (valijaAbierta)
-        {
-            ReemplazaImagenValija(imagenAbiertaActual);
-        }
-        else {
-            ReemplazaImagenValija(imagenCerrada);
-        }
+    public void AbrirValija() {
+        ReemplazaImagenValija(imagenAbiertaConTapa);
     }
 
-    public void ReemplazaImagenAbierta(Sprite imagenValijaAbierta)
-    {
-        imagenAbiertaActual = imagenValijaAbierta;
-        ReemplazaImagenValija(imagenAbierta);
+    public void CerrarValija() {
+        ReemplazaImagenValija(imagenCerrada);
+
     }
+
     private void ReemplazaImagenValija(Sprite imagenValija)
     {
         GetComponent<Image>().sprite = imagenValija;
     }
+
     private void ReconoceObjetosCorrectos()
     {
         imagenesCorrectas.Clear();
@@ -68,35 +66,34 @@ public class Valija : MonoBehaviour {
 
     public void VerificaObjetosColocadosEnValija(GameObject objetoColocado)
     {
-        //Debug.Log("Coloco : " + objetoColocado.GetComponent<Image>().sprite.name);
-        
         for (int a = 0; a < imagenesCorrectas.Count; a++) {
-            //Debug.Log(imagenesCorrectas[a].name + "," + objetoColocado.GetComponent<Image>().sprite.name);
 
             if (imagenesCorrectas[a].name == objetoColocado.GetComponent<Image>().sprite.name) {
                 //Debug.Log("ok");
 
+                //if (VerificaImagenesEnValija(objetoColocado.GetComponent<Image>().sprite) == false)
+                //{//si la imagen no estaba en la valija
+                   
+                   CE.MostrarBrilloMariquita();
+                    anim.SetTrigger("OK");
+                //    Debug.Log("okokok");
+                //}
 
-                if (VerificaImagenesEnValija(objetoColocado.GetComponent<Image>().sprite) == false)
-                {//si la imagen no estaba en la valija
-                    FindObjectOfType<ControladorIntentos>().ActualizaIntento(true);
-                }
-
-                FindObjectOfType<Armario>().armarioAbierto = false;//cierra el armario
+                AR.CierraArmario();//cierra el armario
+                CI.ActualizaIntento(true);
                 Destroy(objetoColocado);
                 return;
             }
         }
-        Debug.Log("Nop");
-        
-        FindObjectOfType<ControladorIntentos>().ActualizaIntento(false);//cierra el armario
-        FindObjectOfType<Armario>().armarioAbierto = false;
+        //Debug.Log("Nop");
+       
+        AR.CierraArmario();
+        CI.ActualizaIntento(false);//cierra el armario
         Destroy(objetoColocado);
     }
 
     private bool VerificaImagenesEnValija(Sprite imagenLlegada)
     {
-
         for (int a=0;a<imagenesEnValija.Count;a++)
         { 
             if(imagenLlegada.name == imagenesEnValija[a].name)

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Armario.cs" />
+    <Compile Include="Assets\Scripts\ControladorEfectos.cs" />
     <Compile Include="Assets\Scripts\ControladorEscenas.cs" />
     <Compile Include="Assets\Scripts\ControladorIntentos.cs" />
     <Compile Include="Assets\Scripts\ControladorLugares.cs" />
@@ -72,6 +73,11 @@
     <Compile Include="Assets\Scripts\ScrollBoton.cs" />
     <Compile Include="Assets\Scripts\TraspasoNivel.cs" />
     <Compile Include="Assets\Scripts\Valija.cs" />
+    <Compile Include="Assets\Tazo_fx\Script\BillBoard.cs" />
+    <Compile Include="Assets\Tazo_fx\Script\button_target.cs" />
+    <Compile Include="Assets\Tazo_fx\Script\demo.cs" />
+    <Compile Include="Assets\Tazo_fx\Script\tazo_rotate.cs" />
+    <Compile Include="Assets\Tazo_fx\Script\tazo_UVScroller.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/GitHub/marimariquita/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
