@@ -34,4 +34,8 @@ public class ControladorEscenas : MonoBehaviour {
     public void ResetearJuego(){
         indiceEscena = 0;
     }
+
+    public void Salir() {
+        Application.Quit();
+    }
 }

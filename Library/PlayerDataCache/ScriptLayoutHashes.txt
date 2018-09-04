@@ -4,7 +4,6 @@ C:/GitHub/marimariquita/Mariquita.apk
 SceneListBegin?
 Assets/Scenes/Escenario.unity
 Assets/Scenes/Lugar.unity
-Assets/Scenes/Premios.unity
 SceneListEnd?
 5a21ddc056a4c816878a80a057dd36ff Assembly-CSharp.dll:.TraspasoNivel
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
