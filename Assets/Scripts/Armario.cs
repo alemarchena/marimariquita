@@ -44,5 +44,10 @@ public class Armario : MonoBehaviour {
         CE.DetenerAbrir();
     }
 
-
+    public void HabilitarArmario()
+    {
+        
+        botonAbrir.SetActive(true);
+        CE.MostrarAbrir();
+    }
 }

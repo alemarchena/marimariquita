@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDeRetorno: {fileID: 0}
+  canvasFalso: {fileID: 0}
 --- !u!114 &114098962872847590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 17.28, y: 15.58}
-  m_SizeDelta: {x: 99.57, y: 96.17}
+  m_AnchoredPosition: {x: -2.29, y: -6.38}
+  m_SizeDelta: {x: 138.72, y: 140.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225339522896027200
 CanvasGroup:

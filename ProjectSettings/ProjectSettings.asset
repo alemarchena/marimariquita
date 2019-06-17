@@ -241,7 +241,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 6d995c18e573f2743ad46ccf4c6f1fc3, type: 3}
-  AndroidKeystoreName: C:/GitHub/marimariquita/MariquitaKey/mariquitakey.keystore
+  AndroidKeystoreName: C:/Users/alema/OneDrive/Documentos/GitHub/marimariquita/user.keystore
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

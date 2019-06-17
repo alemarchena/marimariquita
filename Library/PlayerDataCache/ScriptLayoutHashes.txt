@@ -1,11 +1,11 @@
 Android
 PlayerPath?
-C:/GitHub/marimariquita/Mariquita.apk
+C:/Users/alema/OneDrive/Documentos/GitHub/marimariquita/Mariquita.apk
 SceneListBegin?
 Assets/Scenes/Escenario.unity
 Assets/Scenes/Lugar.unity
 SceneListEnd?
-5a21ddc056a4c816878a80a057dd36ff Assembly-CSharp.dll:.TraspasoNivel
+ab67829f5a29388e46c0ab21d4866187 Assembly-CSharp.dll:.TraspasoNivel
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -226,7 +226,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.demo
 9755d3b5468742f19ff233948003e48e Assembly-CSharp.dll:.ControladorSonido
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-6bdc426593bc70be9345f87045bd82b4 Assembly-CSharp.dll:.ControladorIntentos
+5bf143ae643769e01123dbe94ec35239 Assembly-CSharp.dll:.ControladorIntentos
 a4b1f42c6b39f5e57af607460d261f69 Assembly-CSharp.dll:.ControladorEfectos
 4d18f3b54216aea06efc0b8d611bab93 Assembly-CSharp.dll:.Valija
 6b6b9a4fbbef3827770df05c752f4468 Assembly-CSharp.dll:.ScrollBoton

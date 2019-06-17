@@ -7,15 +7,16 @@ public class ControladorIntentos : MonoBehaviour {
     [Header("Imagenes botones")]
     public Sprite imagenIntentoOk;
     public Sprite imagenIntentoErroneo;
-
+    [SerializeField] GameObject jugarOtraVez;
 
     [Header("Intentos")]
     public int cantidadIntentos = 3;
     public GameObject prefabIntentos;
 
     private GameObject objetoBotonCreado;
-    private List<GameObject> listaObjetosBotonesCreados;
-    private static int intentoActual = 0;
+    public List<GameObject> listaObjetosBotonesCreados;
+
+    public static int intentoActual = 0;
     private Valija VA;
     private Armario AR;
 
@@ -24,15 +25,31 @@ public class ControladorIntentos : MonoBehaviour {
         VA = FindObjectOfType<Valija>();
         AR = FindObjectOfType<Armario>();
         listaObjetosBotonesCreados = new List<GameObject>();
+
         listaObjetosBotonesCreados.Clear();
 
-        for (int a = 0; a < cantidadIntentos; a++) {
+        for (int a = 0; a < cantidadIntentos; a++)
+        {
             objetoBotonCreado = Instantiate(prefabIntentos);
             objetoBotonCreado.transform.SetParent(transform);
             listaObjetosBotonesCreados.Add(objetoBotonCreado);
+
         }
+
+
     }
 
+    public void RestableceBotones()
+    {
+        for (int a = 0; a < listaObjetosBotonesCreados.Count ; a++)
+        {
+            listaObjetosBotonesCreados[a].GetComponent<Image>().sprite = null;
+            listaObjetosBotonesCreados[a].GetComponent<Image>().color = Color.clear;
+        }
+        
+
+
+    }
     private void Start()
     {
         intentoActual = 0;
@@ -64,7 +81,8 @@ public class ControladorIntentos : MonoBehaviour {
         }
         if (ValorIntento >= cantidadIntentos) {
            
-            AR.CancelaArmario();   
+            AR.CancelaArmario();
+            jugarOtraVez.SetActive(true);
         }
        
     }
